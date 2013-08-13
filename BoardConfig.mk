@@ -74,3 +74,25 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 #SUPERUSER_EMBEDDED := true
 #SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+
+# SELINUX Defines
+BOARD_SEPOLICY_DIRS := \
+    device/htc/enrc2b/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+    file_contexts \
+    genfs_contexts \
+    app.te \
+    bdaddrwriter.te \
+    device.te \
+    domain.te\
+    drmserver.te \
+    file.te \
+    gpsd.te \
+    init_shell.te \
+    keystore.te \
+    mediaserver.te \
+    sensors_config.te \
+    surfaceflinger.te \
+    system.te \
+    zygote.te
