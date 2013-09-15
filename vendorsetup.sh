@@ -20,5 +20,4 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo cm_enrc2b-userdebug
-add_lunch_combo cm_enrc2b-eng
+add_lunch_combo pap_enrc2b-userdebug

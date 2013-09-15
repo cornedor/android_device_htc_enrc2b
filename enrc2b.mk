@@ -66,10 +66,6 @@ PRODUCT_PACKAGES += \
 #NFC
 PRODUCT_PACKAGES += \
     libnfc_ndef
-
-# Power
-PRODUCT_PACKAGES += \
-    power.tegra
         
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
