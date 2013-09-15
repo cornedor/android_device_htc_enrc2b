@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := enrc2b
 $(call inherit-product, vendor/pap/config/common_full_phone.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/pap/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/pap/config/nfc_enhanced.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/enrc2b/full_enrc2b.mk)
