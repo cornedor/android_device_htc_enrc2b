@@ -53,7 +53,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/htc/enrc2b
-TARGET_KERNEL_CONFIG := pap_defconfig
+TARGET_KERNEL_CONFIG := lenny_defconfig
 
 # dont build docs
 DISABLE_DROIDDOC := true
