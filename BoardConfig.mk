@@ -68,3 +68,8 @@ BOARD_SEPOLICY_DIRS += \
     device/htc/enrc2b/selinux
 
 #BOARD_SEPOLICY_UNION +=
+
+#SU
+
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
