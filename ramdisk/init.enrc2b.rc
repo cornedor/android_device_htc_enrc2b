@@ -35,7 +35,7 @@ on fs
     chmod 0660 /rfs
     setprop ro.crypto.fuse_sdcard true
     setprop ro.crypto.umount_sd false
-	
+    
 on post-fs-data
     # We will remap this as /storage/sdcard0 with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
@@ -95,9 +95,9 @@ on boot
     chmod 0666 /proc/net/xt_qtaguid/ctrl
 
 # Wifi: Disable the IPv6 of p2p0 interface
-	write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
-	
-	chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
+    write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
+    
+    chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
     chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
 
 # Load modules while booting 
@@ -165,156 +165,25 @@ on boot
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/amber/brightness
     chown system system /sys/class/leds/amber/blink
-	chown system system /sys/class/leds/button-backlight/slow_blink
+    chown system system /sys/class/leds/button-backlight/slow_blink
 
 # didim
     chown system system /sys/class/graphics/fb0/device/smartdimmer/enable
     chown system system /sys/class/graphics/fb0/device/smartdimmer/aggressiveness
 
 # Sensor
-# iio
-    chown system system /dev/iio:device0
-    chown system system /sys/bus/iio/devices/trigger0/name
-    chown system system /sys/bus/iio/devices/iio:device0/accl_enable
-    chown system system /sys/bus/iio/devices/iio:device0/accl_matrix
-    chown system system /sys/bus/iio/devices/iio:device0/buffer/length
-    chown system system /sys/bus/iio/devices/iio:device0/buffer/enable
-    chown system system /sys/bus/iio/devices/iio:device0/compass_enable
-    chown system system /sys/bus/iio/devices/iio:device0/compass_matrix
-    chown system system /sys/bus/iio/devices/iio:device0/dmp_on
-    chown system system /sys/bus/iio/devices/iio:device0/dmp_int_on
-    chown system system /sys/bus/iio/devices/iio:device0/gyro_enable
-    chown system system /sys/bus/iio/devices/iio:device0/gyro_matrix
-    chown system system /sys/bus/iio/devices/iio:device0/in_accel_scale
-    chown system system /sys/bus/iio/devices/iio:device0/in_anglvel_scale
-    chown system system /sys/bus/iio/devices/iio:device0/in_magn_scale
-    chown system system /sys/bus/iio/devices/iio:device0/key
-    chown system system /sys/bus/iio/devices/iio:device0/power_state
-    chown system system /sys/bus/iio/devices/iio:device0/sampling_frequency
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_x_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_y_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_z_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
-    chown system system /sys/bus/iio/devices/iio:device0/temperature
-    chown system system /sys/bus/iio/devices/iio:device0/trigger/current_trigger
-
-    # new in MA 5.1.5
-    chown system system /sys/bus/iio/devices/iio:device0/secondary_name
-    chown system system /sys/bus/iio/devices/iio:device0/dmp_firmware
-    chown system system /sys/bus/iio/devices/iio:device0/firmware_loaded
-    chown system system /sys/bus/iio/devices/iio:device0/dmp_event_int_on
-    chown system system /sys/bus/iio/devices/iio:device0/dmp_output_rate
-    chown system system /sys/bus/iio/devices/iio:device0/in_accel_x_offset
-    chown system system /sys/bus/iio/devices/iio:device0/in_accel_y_offset
-    chown system system /sys/bus/iio/devices/iio:device0/in_accel_z_offset
-    chown system system /sys/bus/iio/devices/iio:device0/gyro_fsr
-    ## LPQ
-    chown system system /sys/bus/iio/devices/iio:device0/quaternion_on
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_y_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_x_en
-    chown system system /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_r_en
-    ## Screen orientation
-    chown system system /sys/bus/iio/devices/iio:device0/event_display_orientation
-    chown system system /sys/bus/iio/devices/iio:device0/display_orientation_on
-    ## SMD
-    chown system system /sys/bus/iio/devices/iio:device0/event_smd
-    chown system system /sys/bus/iio/devices/iio:device0/smd_enable
-    chown system system /sys/bus/iio/devices/iio:device0/smd_threshold
-    chown system system /sys/bus/iio/devices/iio:device0/smd_delay_threshold
-    chown system system /sys/bus/iio/devices/iio:device0/smd_delay_threshold2
-    ## AMI compass sensor
-    chown system system /dev/iio:device1
-    chown system system /sys/bus/iio/devices/trigger1/name
-    chown system system /sys/bus/iio/devices/iio:device1/buffer/length
-    chown system system /sys/bus/iio/devices/iio:device1/buffer/enable
-    chown system system /sys/bus/iio/devices/iio:device1/compass_enable
-    chown system system /sys/bus/iio/devices/iio:device1/compass_matrix
-    chown system system /sys/bus/iio/devices/iio:device1/in_magn_scale
-    chown system system /sys/bus/iio/devices/iio:device1/power_state
-    chown system system /sys/bus/iio/devices/iio:device1/sampling_frequency
-    chown system system /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_x_en
-    chown system system /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_y_en
-    chown system system /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
-    chown system system /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
-    chown system system /sys/bus/iio/devices/iio:device1/trigger/current_trigger
-
-    chmod 600 /dev/iio:device0
-    chmod 600 /sys/bus/iio/devices/trigger0/name
-    chmod 600 /sys/bus/iio/devices/iio:device0/accl_enable
-    chmod 600 /sys/bus/iio/devices/iio:device0/accl_matrix
-    chmod 600 /sys/bus/iio/devices/iio:device0/buffer/length
-    chmod 600 /sys/bus/iio/devices/iio:device0/buffer/enable
-    chmod 600 /sys/bus/iio/devices/iio:device0/compass_enable
-    chmod 600 /sys/bus/iio/devices/iio:device0/compass_matrix
-    chmod 600 /sys/bus/iio/devices/iio:device0/dmp_on
-    chmod 600 /sys/bus/iio/devices/iio:device0/dmp_int_on
-    chmod 600 /sys/bus/iio/devices/iio:device0/gyro_enable
-    chmod 600 /sys/bus/iio/devices/iio:device0/gyro_matrix
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_accel_scale
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_anglvel_scale
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_magn_scale
-    chmod 600 /sys/bus/iio/devices/iio:device0/key
-    chmod 600 /sys/bus/iio/devices/iio:device0/power_state
-    chmod 600 /sys/bus/iio/devices/iio:device0/sampling_frequency
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_x_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_y_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_accel_z_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_x_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_y_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_anglvel_z_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_x_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_y_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_magn_z_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_timestamp_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/temperature
-    chmod 600 /sys/bus/iio/devices/iio:device0/trigger/current_trigger
-    # new in MA 5.1.5
-    chmod 600 /sys/bus/iio/devices/iio:device0/secondary_name
-    chmod 600 /sys/bus/iio/devices/iio:device0/dmp_firmware
-    chmod 600 /sys/bus/iio/devices/iio:device0/firmware_loaded
-    chmod 600 /sys/bus/iio/devices/iio:device0/dmp_event_int_on
-    chmod 600 /sys/bus/iio/devices/iio:device0/dmp_output_rate
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_accel_x_offset
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_accel_y_offset
-    chmod 600 /sys/bus/iio/devices/iio:device0/in_accel_z_offset
-    chmod 600 /sys/bus/iio/devices/iio:device0/gyro_fsr
-    ## LPQ
-    chmod 600 /sys/bus/iio/devices/iio:device0/quaternion_on
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_z_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_y_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_x_en
-    chmod 600 /sys/bus/iio/devices/iio:device0/scan_elements/in_quaternion_r_en
-    ## Screen orientation
-    chmod 600 /sys/bus/iio/devices/iio:device0/event_display_orientation
-    chmod 600 /sys/bus/iio/devices/iio:device0/display_orientation_on
-    ## SMD
-    chmod 600 /sys/bus/iio/devices/iio:device0/event_smd
-    chmod 600 /sys/bus/iio/devices/iio:device0/smd_enable
-    chmod 600 /sys/bus/iio/devices/iio:device0/smd_threshold
-    chmod 600 /sys/bus/iio/devices/iio:device0/smd_delay_threshold
-    chmod 600 /sys/bus/iio/devices/iio:device0/smd_delay_threshold2
-    ## AMI compass sensor
-    chmod 600 /dev/iio:device1
-    chmod 600 /sys/bus/iio/devices/trigger1/name
-    chmod 600 /sys/bus/iio/devices/iio:device1/buffer/length
-    chmod 600 /sys/bus/iio/devices/iio:device1/buffer/enable
-    chmod 600 /sys/bus/iio/devices/iio:device1/compass_enable
-    chmod 600 /sys/bus/iio/devices/iio:device1/compass_matrix
-    chmod 600 /sys/bus/iio/devices/iio:device1/in_magn_scale
-    chmod 600 /sys/bus/iio/devices/iio:device1/power_state
-    chmod 600 /sys/bus/iio/devices/iio:device1/sampling_frequency
-    chmod 600 /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_x_en
-    chmod 600 /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_y_en
-    chmod 600 /sys/bus/iio/devices/iio:device1/scan_elements/in_magn_z_en
-    chmod 600 /sys/bus/iio/devices/iio:device1/scan_elements/in_timestamp_en
-    chmod 600 /sys/bus/iio/devices/iio:device1/trigger/current_trigger
+    mkdir /data/sensors 0751 system system
+    mkdir /data/lightsensor 0751 system system
+    chmod 666 /dev/nvhost-ctrl
+    chmod 666 /dev/nvhost-display
+    chmod 666 /dev/nvhost-dsi
+    chmod 666 /dev/nvhost-gr2d
+    chmod 666 /dev/nvhost-gr3d
+    chmod 666 /dev/nvhost-isp
+    chmod 666 /dev/nvhost-mpe
+    chmod 666 /dev/nvhost-vi
+    chown system system /sys/bus/iio/devices/device0/als_ir_mode
+    chown system system /sys/bus/iio/devices/device0/proximity_enable
 
 # BB remote file system
     mkdir /data/rfs
@@ -340,7 +209,7 @@ on boot
     write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
 
     write /sys/module/cpu_tegra3/parameters/auto_hotplug 1
-	write /sys/kernel/debug/tegra_hotplug/max_cpus 4
+    write /sys/kernel/debug/tegra_hotplug/max_cpus 4
     write /sys/module/cpu_tegra3/parameters/no_lp 0
     #write /sys/module/tegra3_emc/parameters/emc_enable 0
     write /sys/module/cpuidle/parameters/lp2_in_idle 1
@@ -356,7 +225,7 @@ on boot
     write /sys/block/mmcblk0/queue/read_ahead_kb 1024
     write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
     
-    # Flash storage isn't a good entropy source, and only causes locking	
+    # Flash storage isn't a good entropy source, and only causes locking    
     # overhead in the kernel. Turn it off
     write /sys/block/mmcblk0/queue/add_random 0
 
@@ -417,8 +286,8 @@ service htcbatt /system/bin/htcbatt
      oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+    -iwlan0 -Dnl80211 \
+    -c/data/misc/wifi/wpa_supplicant.conf \
     -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
@@ -431,7 +300,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     oneshot
 
 service p2p_supplicant /system/bin/wpa_supplicant \
-    -iwlan0 -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
+    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -N \
     -ip2p0 -Dnl80211 -c /data/misc/wifi/p2p_supplicant.conf \
@@ -447,7 +316,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
+service dhcpcd_wlan0 /system/bin/dhcpcd -aABKL
     class main
     disabled
     oneshot
@@ -457,12 +326,7 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     disabled
     oneshot
 
-service dhcpcd_eth0 /system/bin/dhcpcd -ABDKL -f/system/etc/dhcpcd/dhcpcd.conf
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
+service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -477,12 +341,7 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service iprenew_eth0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/dhcpcd -n
+service iprenew_bnep0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
@@ -549,7 +408,6 @@ service sensors-config /system/bin/sensors-config
    oneshot
 #Sensor load calibration files end
 
-
 # virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
@@ -573,16 +431,6 @@ on property:ro.hdmi.enable=true
     chown system system /sys/class/leds/button-backlight/off_timer    
     chown system system /sys/class/leds/button-backlight/slow_blink_brightness_limit    
             
-# Set this property so surfaceflinger is not started by system_init
-    setprop system_init.startsurfaceflinger 0
-
-    class_start core
-    
-    # maxwen - dirty hack to make sure servicemanager is started before the rest
-    exec /system/bin/sleep 2
-    
-    class_start main
-
 service choice_fn /sbin/choice_fn
     oneshot
 
