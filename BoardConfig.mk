@@ -69,7 +69,9 @@ BOARD_SEPOLICY_DIRS += \
 
 #BOARD_SEPOLICY_UNION +=
 
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
 #SU
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+#SUPERUSER_EMBEDDED := true
+#SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
