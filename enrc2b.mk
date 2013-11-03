@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calibration:system/etc/calibration \
     $(LOCAL_PATH)/configs/sysctl.conf:system/etc/sysctl.conf
 
+# BT
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+
 #Audio packages
 PRODUCT_PACKAGES += \
     libinvensense_mpl
