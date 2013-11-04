@@ -43,7 +43,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gpsconfig_release.xml:system/etc/gps/gpsconfig_release.xml \
     $(LOCAL_PATH)/configs/htcfs.conf:system/etc/htcfs.conf \
     $(LOCAL_PATH)/configs/hostapd.conf:system/etc/wifi/hostapd.conf \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     $(LOCAL_PATH)/configs/calibration:system/etc/calibration \
