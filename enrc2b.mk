@@ -55,7 +55,10 @@ $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 #Audio packages
 PRODUCT_PACKAGES += \
-    libinvensense_mpl
+    libinvensense_mpl \
+    audio.r_submix.default \
+    audio.a2dp.default \
+    audio.usb.default
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

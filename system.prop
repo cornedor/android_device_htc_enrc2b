@@ -85,6 +85,10 @@ wifi.supplicant_scan_interval=60
 debug.nfc.fw_download=true
 debug.nfc.se=true
 
+# Default network type.
+# 0 => WCDMA preferred.
+ro.telephony.default_network=0
+
 # For usb storage
 ro.usb_host = 1
 
