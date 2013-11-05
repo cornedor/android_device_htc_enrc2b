@@ -52,11 +52,10 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/htc/enrc2b
-TARGET_KERNEL_CONFIG := cyanogenmod_enrc2b_defconfig
+TARGET_KERNEL_CONFIG := omnirom_enrc2b_defconfig
 
 # dont build docs
 DISABLE_DROIDDOC := true
-#TARGET_PREBUILT_KERNEL := device/htc/enrc2b/recovery/recovery-kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/htc/enrc2b/ramdisk/fstab.enrc2b
@@ -66,14 +65,17 @@ RECOVERY_FSTAB_VERSION := 2
 BOARD_SEPOLICY_DIRS += \
     device/htc/enrc2b/selinux
 
-#BOARD_SEPOLICY_UNION +=
-
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
-#SU
-
-#SUPERUSER_EMBEDDED := true
-#SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+# TWRP Configurations comment these out to use CWM
+DEVICE_RESOLUTION := 720x1280
+BOARD_HAS_NO_REAL_SDCARD := true
+TARGET_RECOVERY_INITRC := device/htc/enrc2b/recovery/init.twrp.rc
+TW_FLASH_FROM_STORAGE := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_NO_USB_STORAGE := true
 
 # SELINUX Defines
 BOARD_SEPOLICY_DIRS := \
