@@ -15,7 +15,7 @@ $(call inherit-product, device/htc/enrc2b/full_enrc2b.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := enrc2b
-PRODUCT_NAME := pap_enrc2b
+PRODUCT_NAME := omni_enrc2b
 PRODUCT_BRAND := htc_europe
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_MODEL := One X+
